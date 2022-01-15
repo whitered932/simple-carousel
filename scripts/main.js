@@ -6,7 +6,6 @@ viewCheckbox.checked = "";
 
 let currentAngle = 0;
 let isMouseDown = false;
-let rotateFn = "rotateY";
 let isVertical = false;
 
 viewCheckbox.addEventListener("change", (e) => {
@@ -16,13 +15,11 @@ viewCheckbox.addEventListener("change", (e) => {
 
 const rotateView = (angle) => {
   if (isVertical) {
-    carousel.style.transform = `perspective(1000px) ${rotateFn}(${
+    carousel.style.transform = `perspective(1000px) rotateY(${
       angle || 0
     }deg) rotateX(90deg)`;
   } else {
-    carousel.style.transform = `perspective(1000px) ${rotateFn}(${
-      angle || 0
-    }deg)`;
+    carousel.style.transform = `perspective(1000px) rotateY(${angle || 0}deg)`;
   }
   currentAngle = angle;
 };
